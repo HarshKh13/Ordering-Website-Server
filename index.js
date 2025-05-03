@@ -6,7 +6,9 @@ const items = require('./routes/items');
 const cartItems = require('./routes/cartItems')
 
 app.use(cors({
-    origin: '*'
+    origin: ['https://client-ordering-page.vercel.app', 'http://localhost:3000'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
 }));
 app.use(express.json());
 app.use('/api', items);
